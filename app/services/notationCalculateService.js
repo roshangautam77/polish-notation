@@ -32,12 +32,14 @@ app.service('notationCalculateService', function() {
 						}
 						buildResult.push(parseFloat(a) / parseFloat(b));
 						break;
-                    case "%":
+                    			case "%":
 						buildResult.push(parseFloat(a) % parseFloat(b));
 						break;
-                    case "^":
-                        buildResult.push(Math.pow(parseInt(b), parseInt(a)));
+                    			case "^":
+                        			buildResult.push(Math.pow(parseInt(b), parseInt(a)));
 						break;
+					default:
+						return "Invalid operator. Please enter correct operator.";
 				}
             }
         }
