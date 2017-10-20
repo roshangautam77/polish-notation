@@ -56,6 +56,16 @@ describe('Testing Controller', function(){
       $scope.output = $scope.postfixEvaluator($scope.expression);
       expect($scope.output).toEqual(11);
     });
+	it('should return "Division by zero not allowed. Please enter valid number." if the input expression is "0 5 / " ', function() {
+      $scope.expression = '0 5 / ';
+      $scope.output = $scope.postfixEvaluator($scope.expression);
+      expect($scope.output).toEqual("Division by zero not allowed. Please enter valid number.");
+    });
+  it('should return "Invalid operator. Please enter correct operator." if the input expression is "5 5 & " ', function() {
+      $scope.expression = '5 5 & ';
+      $scope.output = $scope.postfixEvaluator($scope.expression);
+      expect($scope.output).toEqual("Invalid operator. Please enter correct operator.");
+    });
 	it('should return "Invalid input. Please provide numbers and operators only." if the input expression is "f t / " ', function() {
       $scope.expression = 'f t / ';
       $scope.output = $scope.postfixEvaluator($scope.expression);
